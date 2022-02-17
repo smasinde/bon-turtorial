@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2 style="color:green">GeeksforGeeks</h2>
+    <p><b>Nested tables</b></p>
+
+    <table border="2" bordercolor="green" id="table-outer">
+        <tr>
+            <td>main Table row 1 column 1</td>
+            <td>main Table column 2
+                <table border="2" bordercolor="blue" id="table-inner">
+                    <tr>
+                        <td>inner Table row 1 column 1</td>
+                        <td>inner Table row 1 column 2</td>
+                    </tr>
+                    <tr>
+                        <td>inner Table row 2 column 1 </td>
+                        <td>inner Table row 2 column 2</td>
+                    </tr>
+                    <tr>
+                        <td>inner Table row 3 column 1 </td>
+                        <td>inner Table row 3 column 2</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td> main Table row 2 column 1 </td>
+            <td> main Table row 2 column 2 </td>
+        </tr>
+    </table>
+</body>
+<script type="text/javascript">
+    let table = document.getElementById("table-outer");
+    let innerTable = document.getElementById("table-inner");
+    let tableData = {};
+
+    for (let i in table.rows) {
+        let row = table.rows[i];
+        for (let j in row.cells) {
+            let col = row.cells[j];
+            console.log(col.innerHTML)
+        }
+    }
+    console.log(tableData);
+</script>
+</html>
